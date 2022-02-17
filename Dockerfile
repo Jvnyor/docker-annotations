@@ -6,7 +6,7 @@ COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml clean package
 RUN mvn -f /usr/src/app mvn clean compile assembly:single
 
-FROM java:11
+FROM openjdk:11
 
 COPY --from=builder /usr/src/app/target/projectname-VERSION-jar-with-dependencies.jar /usr/app/projectname-VERSION-jar-with-dependencies.jar
 
