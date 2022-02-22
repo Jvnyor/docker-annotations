@@ -9,7 +9,7 @@ COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
 
 RUN mvn -f /usr/src/app/pom.xml clean package
-RUN mvn -f /usr/src/app mvn clean compile assembly:single
+RUN mvn -f /usr/src/app clean compile assembly:single
 
 FROM openjdk:11
 
